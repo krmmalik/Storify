@@ -1,0 +1,42 @@
+
+/* from typekit */   
+h1.title {
+font-family: museo-slab,serif;
+font-style: normal;
+font-weight: 700; 
+font-size: 30px; 
+color: #444;
+padding: 0;
+line-height: 0;
+margin-left: 5px;
+}
+p.title  { 
+font-family: museo-slab,serif;
+font-style: normal;
+font-weight: 700;
+font-size: 12px; 
+color: #ccc;
+padding: 0;
+margin-left: 5px;
+}
+
+p.login { font-size: 18px; 
+color: #444; 
+font-family: museo-slab,serif;
+font-style: normal;
+font-weight: 700;
+}
+
+/* My Layout */
+.container_login {
+width: 360px;
+margin-left: auto;
+margin-right: auto;
+}
+
+button, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+input { font-size: 18px; color: #444; }
+
+button, input { line-height: normal; *overflow: visible; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
