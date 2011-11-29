@@ -1,3 +1,8 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<title>Storify</title>
+<!-- Socket.io -->
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io.connect('http://localhost');
@@ -6,10 +11,9 @@
     socket.emit('my other event', { my: 'data' });
   });
 </script>
-<!doctype html>
-<meta charset="utf-8">
-<head>
-<title>Storify</title>
+
+
+
 <!-- Typekit font selection - linked to domain -->
 <script type="text/javascript" src="http://use.typekit.com/ndb8oyx.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
