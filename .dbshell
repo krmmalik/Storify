@@ -1,0 +1,3 @@
+use test
+show collections
+db.storydbs.find();
