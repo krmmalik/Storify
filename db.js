@@ -15,7 +15,7 @@ var Storydb = new Schema ({
 mongoose.connect('mongodb://localhost/test');
 
 //setup model and pass it schema
-mongoose.model = ('Storydb',Storydb);
+mongoose.model ('Storydb',Storydb);
 
 var StoryModel = mongoose.model ('Storydb');
 
