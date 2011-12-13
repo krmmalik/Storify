@@ -4,27 +4,36 @@ var mongoose = require ('mongoose'),
 	Schema = mongoose.Schema;
 
 //Create Schema	
-var Storydb = new Schema ({
 
+var Lines = new Schema({
+    author  : String,
+	text  : String
+});
+
+var Story = new Schema ({
+	
+	maxlines: {type: Number, default: 3}, // Max number of lines per user
+	date: {type: Date, default: Date.now},
 	title: String,
-	body: String,
-	date: Date
+	lines: [Lines]
 	
 	});
 
 mongoose.connect('mongodb://localhost/test');
 
 //setup model and pass it schema
-mongoose.model ('Storydb',Storydb);
+mongoose.model ('Story',Story);
 
-var StoryModel = mongoose.model ('Storydb');
+var StoryModel = mongoose.model ('Story');
 
 var story = new StoryModel();
 
 //Insert Data
 story.title = 'The Man in the green shirt';
-story.body = 'once upon a time, way back';
-story.date = Date.now();
+//story.body = 'once upon a time, way back';
+story.lines.push ({ author: 'Khuram', text: 'lets eat food'});
+story.lines.push ({ author: 'Richard', text: 'lets jump'});
+
 
 //save
 story.save(function(err){
