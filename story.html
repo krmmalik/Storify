@@ -4,16 +4,23 @@
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
  $(document).ready(function() {
- 	$('#story').keyup(function()
+ 	$('#story').keyup(function(event)
     	{
         
 
         var txtInput = $(this).val();
-        txtInput = txtInput.charAt(txtInput.length-1);
-        console.log(txtInput);
         
-    	});
-   });
+        //capture sentence on enter key
+    	if (event.which == 13) {
+   		 
+   		 console.log(txtInput);
+   		 txtInput = ''; // empty buffer
+  		}  
+  		
+		});
+   
+	});
+
 </script>
 
 </head>
