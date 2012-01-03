@@ -2,6 +2,18 @@
 <head>
 <!-- jquery -->
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<!-- Socket.io -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    
+  });
+</script>
+
+<!-- Text Input -->
 <script>
  $(document).ready(function() {
  	$('#story').keyup(function(event)
@@ -14,6 +26,7 @@
     	if (event.which == 13) {
    		 
    		 console.log(txtInput);
+       socket.emit('slog', { my: txtInput });
    		 txtInput = ''; // empty buffer
   		}  
   		
