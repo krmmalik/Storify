@@ -1,0 +1,50 @@
+<!doctype html> 
+<head>
+<!-- jquery -->
+<script src="js/libs/jquery-1.7.1.min.js"></script>
+
+<!-- Socket.io -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    
+  });
+</script>
+
+<!-- Text Input -->
+<script>
+ $(document).ready(function() {
+ 	$('#story').keyup(function(event)
+    	{
+        
+
+        var txtInput = $(this).val();
+        
+        //capture sentence on enter key
+    	if (event.which == 13) {
+   		 
+   		 console.log(txtInput);
+       socket.emit('slog', { my: txtInput });
+   		 txtInput = ''; // empty buffer
+  		}  
+  		
+		});
+   
+	});
+
+</script>
+
+</head>
+
+<body>
+
+<textarea rows="15" cols="50" id="story">
+</textarea>
+
+<div id="test"></div>
+
+</body>
+
+</html>

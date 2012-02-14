@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+test
+2+2
+=======
+use test
+show collections
+db.storydbs.find();
+>>>>>>> 3656bd73ddf9d6945281b18f92935c2ae7cc1b5c
+use test
+db.storydbs.find();
+db.storydbs.remove();
+db.storydbs.find();
+db.storydbs.remove();
+db.storydbs.find();
+db.storys.find();
+db.story.find
+db.story.find();
+use test
+db.storys.find();
+show collections
+db.stories.find();
+db.stories.find();

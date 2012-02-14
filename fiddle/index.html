@@ -1,0 +1,64 @@
+<!doctype html>
+<meta charset="utf-8">
+<head>
+<title>Storify</title>
+<!-- Socket.io -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+
+
+
+<!-- Typekit font selection - linked to domain -->
+<script type="text/javascript" src="http://use.typekit.com/ndb8oyx.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- jquery -->
+<script src="js/libs/jquery-1.6.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js"></script>
+
+<!-- Aristo add class -->
+<script src="js/script.js"></script>
+
+<!-- css -->
+<link rel="stylesheet" href="css/layout.css"> 
+<link type="text/css" href="css/Aristo/jquery-ui-1.8.7.custom.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+	<!-- main login screen --->
+	<div id="container">
+    <header>
+	<h1 class="title">Storify</h1>
+	<p class="title"><strong>write our story</strong><p>
+    </header>
+
+    <div id="main" role="main">
+		<div class="container_login">
+			<p class="login">
+			<strong>Name</strong>&nbsp; 
+			<input type="text" placeholder="john doe" />&nbsp;
+			<input type="button" id="inputButton" value="Join" />
+			</div>
+		</p>
+
+    </div>
+    <footer>
+
+    </footer>
+  </div> <!--! end of #container -->
+  
+
+
+
+
+
+</body>
+</html>

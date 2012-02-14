@@ -13,7 +13,7 @@ var app = require('express').createServer()
 app.listen(80);
 
 app.get('/', function (req, res) {
-  res.sendfile((__dirname + '/story.html'));
+  res.sendfile((__dirname + '/public/story.html'));
 });
 
 
