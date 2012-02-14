@@ -46,28 +46,30 @@ var StoryModel = mongoose.model ('Story');
 var story = new StoryModel();
 
 // Fixed params
-story.title = 'Last Samurai';
+story.title = 'Socketi';
+// story.lines.push ({ author: 'Khuram', text:'socket data'});
 
 
 //Capture data from socket into schema
 io.sockets.on('connection', function (socket) {
+    
   socket.emit('news', { hello: 'world' });
-  socket.on('slog', function (data) {
-  story.lines.push ({ author: 'Khuram', text: data.my}, function (){
-  	
-  		story.save(function(err){
-
-		//save line
+  
+  socket.on('slog', function(data){
+    story.lines.push ({
+        author: 'Khuram',
+        text: data.my
+    });
+  	story.save(function(err){
 		if (err) {throw err; }
 		console.log('saved story line');
-		});
-
-  	});
-	
+	});
   });
+  
 });
 
 
 //disconnect db
-mongoose.disconnect();
+//mongoose.disconnect()
+
 	
